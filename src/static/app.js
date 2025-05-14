@@ -155,6 +155,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Multi-page navigation logic
+  function showPage(pageId) {
+    document.querySelectorAll('.page-section').forEach(section => {
+      section.classList.remove('active');
+    });
+    const page = document.getElementById(pageId);
+    if (page) page.classList.add('active');
+  }
+
+  // Navigation event listeners
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      const pageMap = {
+        'nav-home': 'home-page',
+        'nav-activities': 'activities-container',
+        'nav-articles': 'articles-page',
+        'nav-settings': 'settings-page',
+      };
+      showPage(pageMap[link.id]);
+    });
+  });
+
+  // Show Home by default
+  showPage('home-page');
+
   // Initialize app
   fetchActivities();
 });
