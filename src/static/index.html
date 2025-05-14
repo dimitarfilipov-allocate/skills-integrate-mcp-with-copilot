@@ -8,20 +8,37 @@
   </head>
   <body>
     <header>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#home" class="nav-link active" id="nav-home">Home</a></li>
+          <li><a href="#activities" class="nav-link" id="nav-activities">Activities</a></li>
+          <li><a href="#articles" class="nav-link" id="nav-articles">Articles</a></li>
+          <li><a href="#settings" class="nav-link" id="nav-settings">Settings</a></li>
+        </ul>
+      </nav>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
     </header>
 
     <main>
-      <section id="activities-container">
+      <section id="home-page" class="page-section">
+        <h3>Welcome!</h3>
+        <p>Explore extracurricular activities, read the latest news, and manage your preferences.</p>
+      </section>
+      <section id="activities-container" class="page-section">
         <h3>Available Activities</h3>
         <div id="activities-list">
           <!-- Activities will be loaded here -->
           <p>Loading activities...</p>
         </div>
       </section>
-
-      <section id="signup-container">
+      <section id="articles-page" class="page-section" style="display:none">
+        <h3>Articles & News</h3>
+        <div id="articles-list">
+          <p>No articles yet.</p>
+        </div>
+      </section>
+      <section id="signup-container" class="page-section">
         <h3>Sign Up for an Activity</h3>
         <form id="signup-form">
           <div class="form-group">
@@ -38,6 +55,10 @@
           <button type="submit">Sign Up</button>
         </form>
         <div id="message" class="hidden"></div>
+      </section>
+      <section id="settings-page" class="page-section" style="display:none">
+        <h3>Settings</h3>
+        <p>Settings functionality coming soon.</p>
       </section>
     </main>
 
